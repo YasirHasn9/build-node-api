@@ -127,5 +127,5 @@ server.use(express.static("public"));
 Now, if you go back to your GitHup repo, you'll find thousands or unnecessary files been uploaded.
 Also, it's dangerous to let user's sensitive information been exposed to the public.
 So, we should not upload these files and even when you work with other devs, its so easy for
-them to for the repo and run `npm install` or `yarn install` to install all the dependencies
+them to fork the repo and run `npm install` or `yarn install` to install all the dependencies
 in the `package.json`
