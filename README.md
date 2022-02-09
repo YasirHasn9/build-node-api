@@ -77,6 +77,10 @@ server.HTTP-VERB('endpoint | url | route" , (req, res) => {
 
 Imagine, we want to take a look at all the users in our database
 
+### GET
+
+get enables us to request a data from the server
+
 ```js
 server.get("/users", (req, res) => {
   res.status(200).send([{ name: "Jon" }, { name: "Doe" }]);
@@ -86,3 +90,35 @@ server.get("/users", (req, res) => {
 status(#number)
 we should pass numbers to the status function that indicates if our requests have been successful or
 failed. You can check them [https://developer.mozilla.org/en-US/docs/Web/HTTP/Status] "here"
+
+### POST
+
+post enables us to create or send a new data to the server
+Before sending anything to the server, we need a way to parse JSON body.
+So we are gonna use a middleware that would help with that.
+to parse json body
+`sever.use(express.json())`
+
+### Node is all about using Middlewares, even the verb we are using are middleware
+
+**_ Tip _**
+It's tedious to stop and rerun our sever each time we are making a new request or when we update
+our code. We need a way to let our sever update each time we are making a change to our code.
+There is a library called `nodemon` that we can use it only in the production so we should add it
+under the dev-dependency
+run `npm install nodemon --save-dev` or `yarn add nodemon --save`
+
+Now, I want create a static website where I can sever html, css, and js files form different
+directory
+
+Now, let's serve a static website
+
+1. create a folder in the root called `public`
+2. create `index.html` , `style.css`, and `script.js` inside `public`
+3. link the files
+4. include this code in your `index.js`
+
+```js
+// whatever the name your folder
+server.use(express.static("public"));
+```

@@ -6,6 +6,10 @@
   "author": "Yasir <hasanyasir01@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "express": "^4.17.2"
+    "express": "^4.17.2",
+    "nodemon": "^2.0.15"
+  },
+  "scripts": {
+    "dev": "nodemon index"
   }
 }

@@ -1,26 +1,13 @@
 // 1.initialize our app
-const app = require("express");
+const express = require("express");
+// const app = require("express");
 // 2.create server
-const server = app();
+const server = express();
 
-// 4.create our endpoints
-server.get("/", (req, res) => {
-  res.json("Hello world");
-});
+// to parse our json body, we are gonna use a middleware call use
+server.use(express.json());
 
-server.get("/users", (req, res) => {
-  res.status(200).send([
-    {
-      name: " Yasir",
-    },
-    {
-      name: "Aj",
-    },
-    {
-      name: "Ali",
-    },
-  ]);
-});
+server.use(express.static("public"));
 
 // 3.create a local host
 // listen is a built-in function that established a connection on a specific host or port
