@@ -63,3 +63,26 @@ Now, let's build our api
 3. create js file, name it whatever you want but the industry recommend to use `index.js` or `app.js`
    im going to choose `index.js`
    you can do either manually through or run in the terminal in the root directory `touch index.js`
+
+4. Now, lets create our first request to the server by using the http-verbs and url
+
+```js
+server.HTTP-VERB('endpoint | url | route" , (req, res) => {
+    this is a callback function that takes two argument i called them the homies (request and response)
+    first one is the request, it's what we want from the server
+    second one is the response, it's what the server sends back to us
+    the cb handles the request and response
+})
+```
+
+Imagine, we want to take a look at all the users in our database
+
+```js
+server.get("/users", (req, res) => {
+  res.status(200).send([{ name: "Jon" }, { name: "Doe" }]);
+});
+```
+
+status(#number)
+we should pass numbers to the status function that indicates if our requests have been successful or
+failed. You can check them [https://developer.mozilla.org/en-US/docs/Web/HTTP/Status] "here"

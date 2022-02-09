@@ -8,6 +8,20 @@ server.get("/", (req, res) => {
   res.json("Hello world");
 });
 
+server.get("/users", (req, res) => {
+  res.status(200).send([
+    {
+      name: " Yasir",
+    },
+    {
+      name: "Aj",
+    },
+    {
+      name: "Ali",
+    },
+  ]);
+});
+
 // 3.create a local host
 // listen is a built-in function that established a connection on a specific host or port
 // it takes 2 parameters, the first one the host number and the
