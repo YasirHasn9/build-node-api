@@ -135,3 +135,10 @@ to make this working run
 `touch` create new file
 `echo && >>` will append the node_modules to the `.gitignore` file
 `git rm -r` will delete folder and subfolder
+
+### How to protect your api keys
+
+when it comes to protect your api keys, we should not push to public on our repo
+Plus, there is a tool we can use that been created on the process of node
+where we can create an environment file, and we can access this file through the process object
+And also, we should include our .env into out .gitignore file so no body can see it.

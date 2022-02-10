@@ -1,3 +1,4 @@
+require("dotenv").config();
 const axios = require("axios");
 const options = require("./api");
 // 1.initialize our app
@@ -6,7 +7,8 @@ const express = require("express");
 
 // 2.create server
 const server = express();
-
+console.log(process.env.API_HOST);
+console.log(process.env.API_KEY);
 // to parse our json body, we are gonna use a middleware call use
 server.use(express.json());
 server.use(express.static("public"));
