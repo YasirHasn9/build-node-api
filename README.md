@@ -129,3 +129,9 @@ Also, it's dangerous to let user's sensitive information been exposed to the pub
 So, we should not upload these files and even when you work with other devs, its so easy for
 them to fork the repo and run `npm install` or `yarn install` to install all the dependencies
 in the `package.json`
+
+to make this working run
+`touch .gitignore && echo "node_modules/" >> .gitignore && git rm -r cached node_modules`
+`touch` create new file
+`echo && >>` will append the node_modules to the `.gitignore` file
+`git rm -r` will delete folder and subfolder
